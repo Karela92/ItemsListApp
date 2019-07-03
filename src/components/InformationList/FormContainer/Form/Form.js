@@ -128,20 +128,26 @@ export default class FormContainer extends Component {
     )
   }
 
+  renderSubmitButton() {
+    return(
+      <div>
+        <Button
+          type='submit'
+          content='Добавить'
+          styleType='primary'
+          handleChange= { (ev) => this.handleSubmit(ev) }
+        />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className='listForm'>
         { this.renderFormTitle() }
         { this.renderFormAttributes() }
         { this.renderDescription() }
-        <div>
-          <Button
-            type='submit'
-            content='Добавить'
-            styleType='primary'
-            handleChange= { (ev) => this.handleSubmit(ev) }
-          />
-        </div>
+        { this.renderSubmitButton() }
       </div>
     );
   }
