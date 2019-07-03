@@ -40,12 +40,12 @@ export default class ActionButtons extends Component {
       <div className='buttonGroup'>
         <div className='buttonGroup__actions'>
           <Button
-            content='Добавить в начало'
+            content='Скопировать в начало'
             styleType='primary'
             handleChange = { () => this.handleUpdateListItem(REPLACE_LAST_ITEM_TO_START) }
           />
           <Button
-            content='Добавить в конец'
+            content='Скопировать в конец'
             styleType='primary'
             handleChange = { () => this.handleUpdateListItem(REPLACE_FIRST_ITEM_TO_END) }
           />

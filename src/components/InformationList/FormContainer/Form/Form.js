@@ -3,11 +3,6 @@ import update from 'immutability-helper';
 import PropTypes from 'prop-types';
 import { Button, Input, Textarea, MultiInput } from '../../../ui/ui';
 
-// import Button from '../../../ui/Button/Button';
-// import Input from '../../../ui/Input/Input';
-// import Textarea from '../../../ui/Textarea/Textarea';
-// import MultiInput from '../../../ui/MultiInput/MultiInput';
-
 import './Form.scss';
 
 const DEFAULT_STATE = {
