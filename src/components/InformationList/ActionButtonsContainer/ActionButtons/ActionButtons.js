@@ -36,6 +36,8 @@ export default class ActionButtons extends Component {
   }
 
   render() {
+    const { itemsList } = this.props;
+    const disabled = itemsList.length <= 1 ? true : false;
     return (
       <div className='buttonGroup'>
         <div className='buttonGroup__actions'>
@@ -55,11 +57,13 @@ export default class ActionButtons extends Component {
             content='Удалить первый'
             styleType='primary'
             handleChange = { () => this.handleUpdateListItem(REMOVE_FIRST_LIST_ITEM) }
+            disabled={ disabled }
           />
           <Button
             content='Удалить последний'
             styleType='primary'
             handleChange = { () => this.handleUpdateListItem(REMOVE_LAST_LIST_ITEM) }
+            disabled={ disabled }
           />
         </div>
       </div>

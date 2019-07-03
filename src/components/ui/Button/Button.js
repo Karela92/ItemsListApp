@@ -13,16 +13,18 @@ export default class Button extends Component {
   };
 
   static defaultProps = {
-    styleType: 'primary'
+    styleType: 'primary',
+    disabled: false
   };
 
   render() {
-    const { content, styleType, handleChange, type } = this.props;
+    const { content, styleType, handleChange, type, disabled } = this.props;
     return (
       <button
         className={ styleType }
         onClick={ handleChange }
         type={ type }
+        disabled={ disabled }
       >
         { content }
       </button>
