@@ -1,0 +1,9 @@
+.buttonGroup {
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 25%;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.cardContent {
+  display: flex;
+  flex-flow: row wrap;
+  .cardContentBlock {
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    padding: 10px 15px;
+    width: 29%;
+    display: inline-block;
+    box-shadow: 0 2px 0 #80808057;
+    margin-right: 1%;
+    &__header {
+      padding-bottom: 15px;
+      .titleBlock {
+        display: flex;
+        justify-content: space-between;
+        span {
+          color: #20d0d0;
+          display: inline-block;
+        }
+      }
+    }
+    &__attributes {
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey;
+      padding: 15px 0;
+      span {
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+    &__description {
+      padding: 13px 0;
+    }
+  }
+}

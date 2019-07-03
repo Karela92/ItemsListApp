@@ -1,0 +1,25 @@
+.listForm {
+  margin: 20px 0;
+  color: #009797;
+  box-shadow: 4px 2px 7px #80808057;
+  padding: 10px 20px 20px 20px;
+  h4 {
+    color: black;
+  }
+  input {
+    width: 50%;
+    border-radius: 3px;
+    border-color: transparent;
+    border: 1px solid grey;
+    padding: 8px 13px;
+    outline: none;
+  }
+  textarea {
+    resize: none;
+  }
+  .errorMessage {
+    color: red;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+}

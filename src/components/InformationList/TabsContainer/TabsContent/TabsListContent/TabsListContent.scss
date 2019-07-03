@@ -1,0 +1,31 @@
+.listContentBlock {
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  padding: 10px 15px;
+  box-shadow: 0 2px 0 #80808057;
+  &__header {
+    display: flex;
+    padding-bottom: 15px;
+    .titleBlock {
+      width: 30%;
+      span {
+        color: #20d0d0;
+        width: 25%;
+        display: inline-block;
+      }
+    }
+    .attributesBlock {
+      width: 70%;
+      span {
+        width: 30%;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__description {
+    border-top: 1px solid grey;
+    padding: 13px 0;
+  }
+}

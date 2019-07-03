@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import './Button.scss'
+
+export default class Button extends Component {
+
+  static propTypes = {
+    content: PropTypes.string.isRequired,
+    styleType: PropTypes.string,
+    handleChange: PropTypes.func,
+    type: PropTypes.string
+  };
+
+  static defaultProps = {
+    styleType: 'primary'
+  };
+
+  render() {
+    const { content, styleType, handleChange, type } = this.props;
+    return (
+      <button
+        className={ styleType }
+        onClick={ handleChange }
+        type={ type }
+      >
+        { content }
+      </button>
+    );
+  }
+}
