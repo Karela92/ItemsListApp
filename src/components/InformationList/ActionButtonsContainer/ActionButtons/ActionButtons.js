@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import {
   REMOVE_LAST_LIST_ITEM, REMOVE_FIRST_LIST_ITEM, REPLACE_LAST_ITEM_TO_START, REPLACE_FIRST_ITEM_TO_END
 } from '../../../../constants/ItemsList/ActionButtons';
-
-import Button from '../../../ui/Button/Button';
+import { Button } from '../../../ui/ui';
 
 import './ActionButtons.scss';
 

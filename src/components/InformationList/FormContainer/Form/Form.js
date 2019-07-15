@@ -42,8 +42,7 @@ export default class FormContainer extends Component {
       description,
       attributes: removeEmptyValue
     };
-    itemsList.push(params);
-    updateItemsList(itemsList);
+    updateItemsList([...itemsList, params]);
     this.setState({
       ...DEFAULT_STATE
     })
@@ -68,8 +67,8 @@ export default class FormContainer extends Component {
   };
 
   removeSelectedInput = (index) => {
-    this.setState({
-      attributes: update(this.state.attributes, { $splice: [[index, 1]] })
+    this.setState(state => {
+      attributes: update(state.attributes, { $splice: [[index, 1]] })
     });
   };
 
