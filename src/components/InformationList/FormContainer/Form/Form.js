@@ -19,21 +19,18 @@ export default class FormContainer extends Component {
     updateItemsList: PropTypes.func
   };
 
-  constructor() {
-    super();
-    this.state = {
-      ...DEFAULT_STATE
-    }
-  }
+  state = {
+    ...DEFAULT_STATE
+  };
 
   handleSubmit(ev) {
     ev.preventDefault();
     const { itemsList, updateItemsList } = this.props;
     const { title, description, attributes } = this.state;
     if (title === '') {
-      this.setState({
+      this.setState(() => ({
         error: true
-      });
+      }));
       return;
     }
     const removeEmptyValue = attributes.filter(attribute => attribute.length);
@@ -43,33 +40,35 @@ export default class FormContainer extends Component {
       attributes: removeEmptyValue
     };
     updateItemsList([...itemsList, params]);
-    this.setState({
+    this.setState(() => ({
       ...DEFAULT_STATE
-    })
+    }))
   }
 
   handleFieldChange(fieldName, ev) {
-    this.setState({
+    ev.persist();
+    this.setState(() => ({
       [fieldName]: ev.target.value
-    });
+    }));
   }
 
   handleMultiInputChange = (inputIndex, ev) => {
-    this.setState({
-      attributes: update(this.state.attributes, { [inputIndex]: { $set: ev.target.value } })
-    });
+    ev.persist();
+    this.setState(state => ({
+      attributes: update(state.attributes, { [inputIndex]: { $set: ev.target.value } })
+    }));
   };
 
   addNewInput = () => {
-    this.setState({
-      attributes: update(this.state.attributes, { $push: [''] })
-    });
+    this.setState(state => ({
+      attributes: update(state.attributes, { $push: [''] })
+    }));
   };
 
   removeSelectedInput = (index) => {
-    this.setState(state => {
+    this.setState(state => ({
       attributes: update(state.attributes, { $splice: [[index, 1]] })
-    });
+    }));
   };
 
   renderErrorMessage() {

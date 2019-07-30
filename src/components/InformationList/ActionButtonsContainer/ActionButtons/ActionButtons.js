@@ -17,21 +17,22 @@ export default class ActionButtons extends Component {
 
   handleUpdateListItem(removeType) {
     const { itemsList, updateItemsList } = this.props;
+    const updatedItemList = _.clone(itemsList);
     switch (removeType) {
       case REPLACE_LAST_ITEM_TO_START:
-        itemsList.unshift(_.last(itemsList));
+        updatedItemList.unshift(_.last(itemsList));
         break;
       case REPLACE_FIRST_ITEM_TO_END:
-        itemsList.push(_.first(itemsList));
+        updatedItemList.push(_.first(itemsList));
         break;
       case REMOVE_FIRST_LIST_ITEM:
-        itemsList.shift();
+        updatedItemList.shift();
         break;
       case REMOVE_LAST_LIST_ITEM:
-        itemsList.pop();
+        updatedItemList.pop();
         break;
     }
-    updateItemsList(itemsList);
+    updateItemsList(updatedItemList);
   }
 
   render() {
